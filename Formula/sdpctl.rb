@@ -28,6 +28,7 @@ class Sdpctl < Formula
 
   def install
     bin.install "sdpctl"
+    generate_completions_from_executable("#{bin}/sdpctl", "completion", shells: [:bash, :zsh, :fish])
   end
 
   test do
