@@ -11,7 +11,7 @@ class Sdpctl < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/appgate/sdpctl/releases/appgate/sdpctl/releases/download/2024.02.01/sdpctl_2024.02.01_darwin_arm64.tar.gz"
-      sha256 "45466319ccebeb65c441dc94cef48a7f40ee746818a6aad370e2148cf13108f0"
+      sha256 "c0f74b9bc2251cbfbe5ec6fa1e1740f94e0ad626a6821de47564534614971f28"
 
       def install
         bin.install "sdpctl"
@@ -20,7 +20,7 @@ class Sdpctl < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/appgate/sdpctl/releases/appgate/sdpctl/releases/download/2024.02.01/sdpctl_2024.02.01_darwin_amd64.tar.gz"
-      sha256 "de59c9c92644d96a33fe23056ba88069eea381ad1f76f5154809c1bae09546fd"
+      sha256 "5a31a224c8a412e508e2b15915af6f49aa98c923ab8717249d21ed6a91c45282"
 
       def install
         bin.install "sdpctl"
@@ -30,18 +30,18 @@ class Sdpctl < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/appgate/sdpctl/releases/appgate/sdpctl/releases/download/2024.02.01/sdpctl_2024.02.01_linux_arm64.tar.gz"
-      sha256 "cc9f658ff47df60980d25fb9572eb8b902fc369ef7218b67bb8e427819ae7799"
+    if Hardware::CPU.intel?
+      url "https://github.com/appgate/sdpctl/releases/appgate/sdpctl/releases/download/2024.02.01/sdpctl_2024.02.01_linux_amd64.tar.gz"
+      sha256 "1a9a62bdd7f51928856fab0ede39eb41f7dd918bb4480a0dc4c654c92d285c7d"
 
       def install
         bin.install "sdpctl"
         generate_completions_from_executable("#{bin}/sdpctl", "completion", shells: [:bash, :zsh, :fish])
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/appgate/sdpctl/releases/appgate/sdpctl/releases/download/2024.02.01/sdpctl_2024.02.01_linux_amd64.tar.gz"
-      sha256 "68e1c3428ddbe6bcf0506c1a15491508490bcca931dcc1ecc04a9275b8698419"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/appgate/sdpctl/releases/appgate/sdpctl/releases/download/2024.02.01/sdpctl_2024.02.01_linux_arm64.tar.gz"
+      sha256 "69448b2394ead4a5e06c48adbeaae6fd4c82e665e6f857e28686e18101b24866"
 
       def install
         bin.install "sdpctl"
