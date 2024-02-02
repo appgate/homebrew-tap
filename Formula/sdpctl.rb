@@ -10,7 +10,7 @@ class Sdpctl < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/appgate/sdpctl/releases/appgate/sdpctl/releases/download/2024.02.01/sdpctl_2024.02.01_darwin_arm64.tar.gz"
+      url "https://github.com/appgate/sdpctl/releases/download/2024.02.01/sdpctl_2024.02.01_darwin_arm64.tar.gz"
       sha256 "c0f74b9bc2251cbfbe5ec6fa1e1740f94e0ad626a6821de47564534614971f28"
 
       def install
@@ -19,7 +19,7 @@ class Sdpctl < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/appgate/sdpctl/releases/appgate/sdpctl/releases/download/2024.02.01/sdpctl_2024.02.01_darwin_amd64.tar.gz"
+      url "https://github.com/appgate/sdpctl/releases/download/2024.02.01/sdpctl_2024.02.01_darwin_amd64.tar.gz"
       sha256 "5a31a224c8a412e508e2b15915af6f49aa98c923ab8717249d21ed6a91c45282"
 
       def install
@@ -31,7 +31,7 @@ class Sdpctl < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/appgate/sdpctl/releases/appgate/sdpctl/releases/download/2024.02.01/sdpctl_2024.02.01_linux_amd64.tar.gz"
+      url "https://github.com/appgate/sdpctl/releases/download/2024.02.01/sdpctl_2024.02.01_linux_amd64.tar.gz"
       sha256 "1a9a62bdd7f51928856fab0ede39eb41f7dd918bb4480a0dc4c654c92d285c7d"
 
       def install
@@ -40,7 +40,7 @@ class Sdpctl < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/appgate/sdpctl/releases/appgate/sdpctl/releases/download/2024.02.01/sdpctl_2024.02.01_linux_arm64.tar.gz"
+      url "https://github.com/appgate/sdpctl/releases/download/2024.02.01/sdpctl_2024.02.01_linux_arm64.tar.gz"
       sha256 "69448b2394ead4a5e06c48adbeaae6fd4c82e665e6f857e28686e18101b24866"
 
       def install
