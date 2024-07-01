@@ -5,22 +5,22 @@
 class Sdpctl < Formula
   desc "Official CLI tool for managing Appgate SDP Collectives"
   homepage "https://github.com/appgate/sdpctl/releases"
-  version "2024.04.29"
+  version "2024.07.01"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/appgate/sdpctl/releases/download/2024.04.29/sdpctl_2024.04.29_darwin_amd64.tar.gz"
-      sha256 "71d28aa7103effa5b36d668029f3449975c6837025677c0d67f61c587ceea1a9"
+    if Hardware::CPU.arm?
+      url "https://github.com/appgate/sdpctl/releases/download/2024.07.01/sdpctl_2024.07.01_darwin_arm64.tar.gz"
+      sha256 "ca7d3f081d67a445e7ae9c5d5a06bb62fe88538779bba25861127ba9f83f5d55"
 
       def install
         bin.install "sdpctl"
         generate_completions_from_executable("#{bin}/sdpctl", "completion", shells: [:bash, :zsh, :fish])
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/appgate/sdpctl/releases/download/2024.04.29/sdpctl_2024.04.29_darwin_arm64.tar.gz"
-      sha256 "b1393ad38cb1950ef4a15e7037d0fe1863891c556c1647ed33d8ba791f3f7b49"
+    if Hardware::CPU.intel?
+      url "https://github.com/appgate/sdpctl/releases/download/2024.07.01/sdpctl_2024.07.01_darwin_amd64.tar.gz"
+      sha256 "322dff04d07bf20b62088c29cc574f74e9aedc30b487ede0afef1834be209131"
 
       def install
         bin.install "sdpctl"
@@ -30,18 +30,18 @@ class Sdpctl < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/appgate/sdpctl/releases/download/2024.04.29/sdpctl_2024.04.29_linux_arm64.tar.gz"
-      sha256 "12eae9703265eaf8bad096c31791d780cb6a335bf5f53f3ad6f40dd56486c7ed"
+    if Hardware::CPU.intel?
+      url "https://github.com/appgate/sdpctl/releases/download/2024.07.01/sdpctl_2024.07.01_linux_amd64.tar.gz"
+      sha256 "17469e229c1e548f84dd2c50d17214c9ca1fdec3c7163288ac6c6ae03f8529ad"
 
       def install
         bin.install "sdpctl"
         generate_completions_from_executable("#{bin}/sdpctl", "completion", shells: [:bash, :zsh, :fish])
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/appgate/sdpctl/releases/download/2024.04.29/sdpctl_2024.04.29_linux_amd64.tar.gz"
-      sha256 "ee6705e165e34244010ee39d02dd4a7e5e78a5137d1309074845c0212ba32600"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/appgate/sdpctl/releases/download/2024.07.01/sdpctl_2024.07.01_linux_arm64.tar.gz"
+      sha256 "39be41ae344b54d25db0a107f778c5fb32c3b5c526b371b397ecef8ceb3a35ad"
 
       def install
         bin.install "sdpctl"
