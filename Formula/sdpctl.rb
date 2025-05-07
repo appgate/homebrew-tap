@@ -11,7 +11,7 @@ class Sdpctl < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/appgate/sdpctl/releases/download/2025.05.06/sdpctl_2025.05.06_darwin_arm64.tar.gz"
-      sha256 "d4955eef5e40f60f24d17d393537a512f95b15ffabc1b2d602ce892348dde22b"
+      sha256 "5df629e1663de66b9d2aaf84234ac380abc27e3417c517ef288d0585b33d9f91"
 
       def install
         bin.install "sdpctl"
@@ -20,7 +20,7 @@ class Sdpctl < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/appgate/sdpctl/releases/download/2025.05.06/sdpctl_2025.05.06_darwin_amd64.tar.gz"
-      sha256 "f83e7e21a8ca85e07b541a76693a9e6a2387920fda352619e1ad0751a918ce60"
+      sha256 "69857ebba5a2f57ab9965ffb598afb8964550fe59c1216b36d8078e0d047130f"
 
       def install
         bin.install "sdpctl"
@@ -30,18 +30,18 @@ class Sdpctl < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/appgate/sdpctl/releases/download/2025.05.06/sdpctl_2025.05.06_linux_amd64.tar.gz"
-      sha256 "e15c0f822fdffbf40f675eeb0b3466fbde60b03055ec938bbde5e1c76cece407"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/appgate/sdpctl/releases/download/2025.05.06/sdpctl_2025.05.06_linux_arm64.tar.gz"
+      sha256 "0d617ac4d2731df85c2ac7a4ba06918f5a8285285c7d160fe8f076de6b7dffae"
 
       def install
         bin.install "sdpctl"
         generate_completions_from_executable("#{bin}/sdpctl", "completion", shells: [:bash, :zsh, :fish])
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/appgate/sdpctl/releases/download/2025.05.06/sdpctl_2025.05.06_linux_arm64.tar.gz"
-      sha256 "784e20797c892979f570985643ebb4fa0e15e1a82d06fb0d76f0b7fd3739f729"
+    if Hardware::CPU.intel?
+      url "https://github.com/appgate/sdpctl/releases/download/2025.05.06/sdpctl_2025.05.06_linux_amd64.tar.gz"
+      sha256 "9d4decd3091b0c72b3938a6d3afddefb68ef4aa2467362b2b8a1d6d79a4b4a4e"
 
       def install
         bin.install "sdpctl"
