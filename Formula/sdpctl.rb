@@ -5,13 +5,13 @@
 class Sdpctl < Formula
   desc "Official CLI tool for managing AppGate SDP Collectives"
   homepage "https://appgate.github.io/sdpctl/"
-  version "2026.06.09"
+  version "2026.07.13"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/appgate/sdpctl/releases/download/2026.06.09/sdpctl_2026.06.09_darwin_arm64.tar.gz"
-      sha256 "c13986f2d7a38324779ed19479a29ecd26b64ae42688acfc3166eb5b62dceb4f"
+      url "https://github.com/appgate/sdpctl/releases/download/2026.07.13/sdpctl_2026.07.13_darwin_arm64.tar.gz"
+      sha256 "79f4c3aeabd2e79aa46e4055bd14331a2bb9e5ace9768824e735830691204412"
 
       def install
         bin.install "sdpctl"
@@ -19,8 +19,8 @@ class Sdpctl < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/appgate/sdpctl/releases/download/2026.06.09/sdpctl_2026.06.09_darwin_amd64.tar.gz"
-      sha256 "4cedab8a65e18abe3f4037e6a0e4ce34ecd539cbf06deaa5b550ea81b81e9932"
+      url "https://github.com/appgate/sdpctl/releases/download/2026.07.13/sdpctl_2026.07.13_darwin_amd64.tar.gz"
+      sha256 "801af7a487dc10f0c8447dc0c5265443ecc3aba0bcea0c6efa62ecb3511ad276"
 
       def install
         bin.install "sdpctl"
@@ -31,8 +31,8 @@ class Sdpctl < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/appgate/sdpctl/releases/download/2026.06.09/sdpctl_2026.06.09_linux_amd64.tar.gz"
-      sha256 "9d3c5377378d14d15ca616ea8f753f8a63d63e50fb00f53ca0695dd1efeb0906"
+      url "https://github.com/appgate/sdpctl/releases/download/2026.07.13/sdpctl_2026.07.13_linux_amd64.tar.gz"
+      sha256 "70d36f9f3a6e76b49b938c08ef12d0c02f99c8b44b4ea00f2eafc4914d3f3d15"
 
       def install
         bin.install "sdpctl"
@@ -40,8 +40,8 @@ class Sdpctl < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/appgate/sdpctl/releases/download/2026.06.09/sdpctl_2026.06.09_linux_arm64.tar.gz"
-      sha256 "096409e44fdb500eb20a17ad3623a77ce1a2fac0e6f3a9fa205f42cea11d653d"
+      url "https://github.com/appgate/sdpctl/releases/download/2026.07.13/sdpctl_2026.07.13_linux_arm64.tar.gz"
+      sha256 "dc83193134246a0641816262bf450e569dba11486b9ac97a5e304a9bff2f4491"
 
       def install
         bin.install "sdpctl"
